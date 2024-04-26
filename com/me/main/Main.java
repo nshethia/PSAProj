@@ -5,7 +5,6 @@ import java.util.List;
 import com.me.path.RoadNetwork;
 import com.me.shortestpath.Dijkshtra;
 import com.me.shortestpath.FloydWarshall;
-import com.me.trafficflow.FordFulkerson;
 
 public class Main{
     public static void main(String[] args){
@@ -49,17 +48,9 @@ FloydWarshall floydWarshall = new FloydWarshall(road);
  System.out.println("Calculating traffic congestion levels:");
  floydWarshall.calculateTrafficCongestion();
 
-//  //priortizing roads based on maintenance cost
-// System.out.println("priortizing roads based on maintenance cost");
-//  floydWarshall.prioritizeRoadsForMaintenance(90000);
+ //priortizing roads based on maintenance cost
+System.out.println("priortizing roads based on maintenance cost");
+floydWarshall.prioritizeRoadsForMaintenance(1000);
 
-FordFulkerson flow = new FordFulkerson(road);
-int source=2, sink=5;
-System.out.println("-------------");
-
-flow.MaxFlow(source, sink);
-//flow.mFlow(source, sink);
-//flow.printResidualGraph();
-// flow.optimizeTrafficFlow();
 }
  }
